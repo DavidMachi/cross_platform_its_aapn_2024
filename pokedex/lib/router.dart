@@ -1,12 +1,16 @@
 import 'package:go_router/go_router.dart';
-import 'package:pokedex/logger.dart';
-import 'package:talker_flutter/talker_flutter.dart';
+import 'package:pokedex/api/src/pages/home_page.dart';
+import 'package:pokedex/api/src/pages/liked_poke.dart';
 
 final router = GoRouter(
-  observers: [
-    TalkerRouteObserver(talker),
-  ],
   routes: [
-    // TODO: add routes here...!
-  ],
+    GoRoute(path: '/',
+    name: 'Home-page',
+    builder: (context, state) => const HomePage(),
+    ),
+     GoRoute(path: '/liked',
+    name: 'Liked-pokeF',
+    builder: (context, state) => const LikedPoke(),
+     ),
+  ]
 );
